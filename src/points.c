@@ -6,7 +6,7 @@
 /*   By: asene <asene@student.42perpignan.fr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/22 21:48:25 by asene             #+#    #+#             */
-/*   Updated: 2024/12/23 01:30:17 by asene            ###   ########.fr       */
+/*   Updated: 2024/12/23 17:34:54 by asene            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,26 @@ t_point	*new_point(int x, int y, int z)
 	p->y = y;
 	p->z = z;
 	return (p);
+}
+
+void	center_grid(t_grid *grid)
+{
+	int	i;
+	int	j;
+
+	i = 0;
+	while (i < grid->height)
+	{
+		j = 0;
+		while (j < grid->width)
+		{
+			grid->data[i][j]->x = j - grid->width / 2;
+			grid->data[i][j]->y = i - grid->height / 2;
+			j++;
+		}
+		i++;
+	}
+	
 }
 
 t_grid	*init_grid(t_list *p_list, int height)

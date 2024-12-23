@@ -10,13 +10,14 @@ MLX = $(MLX_FOLDER)/libmlx.a
 INC = -I./$(MLX_FOLDER) -I./libft -I./
 LIB = -L./$(MLX_FOLDER) -L/usr/lib -lmlx -lXext -lX11 -lm -lz -L./libft/ -lft
 
-FLAGS = -Wall -Wextra -Werror -O3 -g
+FLAGS = -Wall -Wextra -Werror -g
 
 SOURCES = \
         main.c \
 		points.c \
 		map_parser.c \
-		event_hooks.c
+		event_hooks.c \
+		mlx_img_utils.c
 
 OBJDIR = obj
 OBJS = $(addprefix $(OBJDIR)/, $(SOURCES:.c=.o))
