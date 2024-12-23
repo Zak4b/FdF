@@ -15,7 +15,8 @@ FLAGS = -Wall -Wextra -Werror -O3 -g
 SOURCES = \
         main.c \
 		points.c \
-		map_parser.c
+		map_parser.c \
+		event_hooks.c
 
 OBJDIR = obj
 OBJS = $(addprefix $(OBJDIR)/, $(SOURCES:.c=.o))
